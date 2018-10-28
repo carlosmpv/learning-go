@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+
+	"github.com/learning-go/golang-syntax-tests/controllers"
 )
 
 var server http.Server
@@ -19,10 +21,11 @@ func main() {
 		Handler: nil,
 	}
 
-	fmt.Printf("Server started at: %s:%d", host, port)
+	fmt.Printf("Server started at: %s:%d\n", host, port)
+	controllers.LoadRoutes()
 	log.Fatal(server.ListenAndServe())
 }
 
-func responseHandler(w http.ResponseWriter, r *http.Request) {
-
+func executeMiddleware() {
+	fmt.Printf("Middleware called!\n")
 }
