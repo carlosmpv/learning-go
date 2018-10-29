@@ -6,6 +6,6 @@ import (
 
 type Product struct {
 	gorm.Model
-	Name  string
-	Price float64
+	Name  string  `form:"name"`
+	Price float64 `form:"price"`
 }

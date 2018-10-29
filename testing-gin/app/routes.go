@@ -5,7 +5,7 @@ import (
 	"github.com/learning-go/testing-gin/controllers"
 )
 
-func InitializeRoutes(engine *gin.Engine) {
-	engine.POST("/sell", controllers.Sell)
-	engine.GET("/list", controllers.List)
+func InitializeRoutes(r *gin.RouterGroup) {
+	r.POST("/sell", controllers.Sell)
+	r.GET("/list", controllers.List)
 }

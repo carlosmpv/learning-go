@@ -11,7 +11,8 @@ func main() {
 	database.InitDB("gorm_user", "123", "golang_store")
 	database.DB.AutoMigrate(&models.Product{})
 
-	app.InitializeRoutes(engine)
+	api := engine.Group("/api")
+	app.InitializeRoutes(api)
 
 	engine.Run(":8080")
 	defer database.DB.Close()

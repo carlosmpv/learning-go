@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="product in products">
+                {{ product.Name }} : R${{ product.Price }}
+            </li>
+        </ul>
+    </div>
+
+    <form method="post" id="sell" action="/api/sell">
+        <input type="text" name="Name">
+        <input type="number" name="Price" step="0.01" id="">
+        <input type="submit" value="">
+    </form>
+    
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
